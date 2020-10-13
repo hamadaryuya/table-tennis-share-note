@@ -13,8 +13,10 @@
 ActiveRecord::Schema.define(version: 2020_10_12_112906) do
 
   create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "plan"
-    t.date "date"
+    t.date "date", null: false
+    t.text "training_menu", null: false
+    t.text "purpose", null: false
+    t.text "introspection"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
