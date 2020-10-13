@@ -12,9 +12,18 @@
   <body>
     <header class="header">
       <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">卓球共有ノート</a></h1>
-        <div class="user_nav grid-6">
-          <a class="post" href="/calendars/new">投稿する</a>
+        <h1 class="grid-6"><a href="/">卓球共有ノート</a></h1></div>
+        <% if user_signed_in? %>
+          <div class="user_nav grid-62">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <%= link_to "投稿する", new_calendar_path, class: "post" %>
+          </div>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "ログイン", new_user_session_path, class: "post" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+          </div>
+        <% end %>
         </div>
       </div>
     </header>
