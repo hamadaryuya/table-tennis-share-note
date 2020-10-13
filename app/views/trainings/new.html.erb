@@ -1,8 +1,8 @@
 <h1>練習内容</h1>
  <div class="parent">
-   <%= form_with  id: 'new_training', class: 'new_training', method: :put, local: true do |f| %>
+   <%= form_with url: calendars_path, id: 'new_training', class: 'new_training', method: :post, local: true do |f| %>
       <div class="field">
-        <%= f.label :日付を選択, class: 'lavel' %>
+        <%= f.label :日付を選択, class: 'date_lavel' %>
         <%= f.date_field :date, class: 'select_date' %> 
       </div>
 
