@@ -1,12 +1,10 @@
 class CalendarsController < ApplicationController
   def index
-    getweek
-    @calenar = Calendar.new
+    
   end
 
   # 予定の保存
   def create
-    binding.pry
     Calendar.create(calendar_params)
     redirect_to action: :index
   end
