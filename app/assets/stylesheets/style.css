@@ -261,6 +261,7 @@ header.header div.header__bar.row div.grid-6 a.post:hover {
   display: flex;
   justify-content: center;
   vertical-align: middle;
+  margin-top: 200px;
 }
 
 .btn-register1 {
@@ -274,6 +275,7 @@ header.header div.header__bar.row div.grid-6 a.post:hover {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
   margin: auto;
   font-size: large;
+  font-size: 50px;
 }
 
 .btn-register2 {
@@ -286,7 +288,7 @@ header.header div.header__bar.row div.grid-6 a.post:hover {
   font-weight: bold;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
   margin: auto;
-  font-size: large;
+  font-size: 50px;
 }
 
 .btn-register:hover {
