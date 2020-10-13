@@ -1,8 +1,7 @@
 <%= form_with model: @plan, url: calendars_path, class: 'form' do |f| %>
     <%= f.label :日付を選択, class: 'lavel' %>
     <%= f.date_field :date, class: 'date-select' %>
-    <%= f.label :予定を入力, class: 'lavel' %>
-    <%= f.text_field :plan, class: 'text-input' %>
+    <%= f.select :category, [["練習記録"], ["試合記録"]],include_blank: "選択して下さい" %>
     <%= f.submit '保存' %>
   <% end %>
   <div class=calendar>
