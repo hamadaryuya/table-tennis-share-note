@@ -1,0 +1,24 @@
+<h1>練習内容</h1>
+ <div class="parent">
+   <%= form_with  id: 'new_training', class: 'new_training', method: :put, local: true do |f| %>
+      <div class="field">
+        <%= f.label :日付を選択, class: 'lavel' %>
+        <%= f.date_field :date, class: 'select_date' %> 
+      </div>
+
+      <div class="field">
+        <%= f.label :"練習メニュー" %> <br>
+        <%= f.text_area :training_menu, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :"目的" %><br>
+        <%= f.text_area :purpose, autofocus: true %>
+      </div>
+
+    <div class="register_actions">
+      <div class="actions">
+      <%= f.submit "登録" %>
+      </div>
+  </div>
+   <% end %>
