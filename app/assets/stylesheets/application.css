@@ -14,4 +14,41 @@
  *= require_self
  */
 
- 
+.header {
+  width: 100%;
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
+  background-color: lavenderblush;
+}
+
+.grid-6 {
+  text-align: left;
+ }
+
+.a {
+  text-decoration: none;
+}
+
+ .grid-62 {
+   display: block;
+   text-align: center;
+ }
+
+ .head_left {
+   margin-right: 20px;
+   border: solid #CC3366;
+   border-radius: 4px;
+   padding: 6px;
+   text-decoration: none;
+   font-size: large;
+ }
+
+ .head_right {
+   margin-left: 60px;
+   border: solid #CC3366;
+   border-radius: 4px;
+   padding: 6px;
+   text-decoration: none;
+   font-size: large;
+ }
