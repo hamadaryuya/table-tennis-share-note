@@ -1,8 +1,9 @@
 class CalendarsController < ApplicationController
   def index
+    @calendars = Calendar.all
+    @calendar = Calendar.create(calendar_params)
   end
 
-  # 予定の保存
   def create
     Calendar.create(calendar_params)
     redirect_to action: :index
@@ -15,6 +16,6 @@ class CalendarsController < ApplicationController
   private
 
   def calendar_params
-    params.require(:training).permit(:date, :training_menu, :purpose, :introspection)
+    params.permit(:date, :training_menu, :purpose, :introspection, :start_date)
   end
 end
