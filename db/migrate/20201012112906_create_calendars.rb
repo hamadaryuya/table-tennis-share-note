@@ -5,6 +5,7 @@ class CreateCalendars < ActiveRecord::Migration[6.0]
       t.text :training_menu           , null: false
       t.text :purpose                 , null: false
       t.text :introspection           
+      t.references    :user           , foreign_key: true
       t.timestamps
     end
   end

@@ -1,11 +1,8 @@
-<div class= 'calender'>
-   <%= month_calendar calendars: @calendars do |date| %>
-     <%= date %>
-     <% @calendars.each do |event| %>
-       <% if event.date.day == date.day %>
-       <% binding.pry %>
-         <% "aaaa" %> 
-       <% end %>
-     <% end %>
-   <% end %>
-</div>
+<%= month_calendar calendars: @calendars do |date, calendar| %>
+  <%= date %>
+    <% @calendars.each do |event| %>
+      <% if event.date == date %>
+        <%= link_to event.training_menu %>
+      <% end %>
+    <% end %>
+<% end %>
