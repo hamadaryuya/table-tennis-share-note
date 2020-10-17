@@ -22,8 +22,8 @@ class CalendarsController < ApplicationController
   end
 
   def update
-    calendar = Calendar.find(params[:id])
-    calendar.update(calendar_params)
+    @calendar = Calendar.find(params[:id])
+    Calendar.update(calendar_params)
   end
 
   def destroy
