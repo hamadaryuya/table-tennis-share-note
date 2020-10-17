@@ -25,6 +25,6 @@ class TrainingsController < ApplicationController
   end
 
   def training_params
-    params.permit(:date, :training_menu, :purpose, :introspection).merge(user_id: current_user.id)
+    params.require(:training).permit!
   end
 end

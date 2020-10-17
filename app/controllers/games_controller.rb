@@ -25,6 +25,6 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.permit(:date, :start_date, :opponent, :result, :good_point, :game_introspection).merge(user_id: current_user.id)
+    params.require(:game).permit!
   end
 end
