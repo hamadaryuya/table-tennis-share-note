@@ -26,6 +26,14 @@ class CalendarsController < ApplicationController
     calendar.update(calendar_params)
   end
 
+  def destroy
+    calendar = Calendar.find(params[:id])
+     if calendar.user_id == current_user.id
+      calendar.destroy
+      redirect_to action: :index
+     end
+  end
+
   private
 
   def calendar_params
