@@ -13,7 +13,7 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    Game.update(game_params)
+    Game.update(update_game_params)
   end
 
   def destroy
@@ -25,6 +25,10 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit!
+    params.permit(:date, :opponent, :result, :good_point, :game_introspection).merge(user_id: current_user.id)
+  end
+
+  def update_game_params
+    params.require(:game).permit(:date, :opponent, :result, :good_point, :game_introspection).merge(user_id: current_user.id)
   end
 end

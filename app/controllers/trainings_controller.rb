@@ -13,7 +13,7 @@ class TrainingsController < ApplicationController
 
   def update
     @training = Training.find(params[:id])
-    Training.update(training_params)
+    Training.update(update_training_params)
   end
 
   def destroy
@@ -25,6 +25,10 @@ class TrainingsController < ApplicationController
   end
 
   def training_params
-    params.require(:training).permit!
+    params.permit(:date, :training_menu, :purpose, :introspection).merge(user_id: current_user.id)
+  end
+
+  def update_training_params
+    params.require(:training).permit(:date, :training_menu, :purpose, :introspection).merge(user_id: current_user.id)
   end
 end
