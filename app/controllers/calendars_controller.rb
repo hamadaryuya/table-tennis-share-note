@@ -37,6 +37,6 @@ class CalendarsController < ApplicationController
   private
 
   def calendar_params
-    params.permit(:date, :training_menu, :purpose, :introspection, :start_date).merge(user_id: current_user.id)
+    params.permit(:date, :training_menu, :purpose, :introspection, :start_date, :opponent, :result, :good_point, :game_introspection).merge(user_id: current_user.id)
   end
 end

@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :users
   resources :calendars
   resources :trainings
+  resources :games
   root to: "calendars#index"
 end

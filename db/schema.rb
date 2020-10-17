@@ -10,17 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_13_113443) do
+ActiveRecord::Schema.define(version: 2020_10_17_124350) do
 
   create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date", null: false
-    t.text "training_menu", null: false
-    t.text "purpose", null: false
+    t.text "training_menu"
+    t.text "purpose"
     t.text "introspection"
+    t.text "opponent"
+    t.text "result"
+    t.text "good_point"
+    t.text "game_introspection"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_calendars_on_user_id"
+  end
+
+  create_table "games", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "date", null: false
+    t.text "opponent"
+    t.text "result"
+    t.text "good_point"
+    t.text "game_introspection"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_games_on_user_id"
   end
 
   create_table "trainings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -48,5 +64,6 @@ ActiveRecord::Schema.define(version: 2020_10_13_113443) do
   end
 
   add_foreign_key "calendars", "users"
+  add_foreign_key "games", "users"
   add_foreign_key "trainings", "users"
 end
