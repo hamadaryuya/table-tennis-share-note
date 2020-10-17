@@ -20,11 +20,12 @@
   padding: 15px 0;
   margin: 0 auto;
   text-align: center;
-  background-color: rgb(156, 174, 253);
+  background-color: rgb(189, 200, 250);
 }
 
 .grid-6 {
   text-align: left;
+  display: table-cell;
  }
 
 .a {

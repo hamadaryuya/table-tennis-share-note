@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body {
-  background-color: rgb(250, 232, 233);
+  background-color: rgb(250, 224, 224);
 }
 
 .calendar {
@@ -98,4 +98,19 @@ body {
   margin-right: 250px;
   font-size: 40px;
 }
+
+.success {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  margin-top: 100px;
+}
+
+.update {
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+
 
