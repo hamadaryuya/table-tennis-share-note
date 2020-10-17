@@ -2,7 +2,7 @@
   <%= date %>
     <% @calendars.each do |event| %>
       <% if event.date == date %>
-        <%= link_to event.training_menu %>
+        <%= link_to event.user.name, edit_calendar_path(event) %>
       <% end %>
     <% end %>
 <% end %>

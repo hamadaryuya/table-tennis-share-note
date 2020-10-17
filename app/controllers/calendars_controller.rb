@@ -13,6 +13,19 @@ class CalendarsController < ApplicationController
     @calendar = Calendar.new
   end
 
+  def edit
+    @calendar = Calendar.find(params[:id])
+  end
+
+  def show
+    @calendar = Calendar.find(params[:id])
+  end
+
+  def update
+    calendar = Calendar.find(params[:id])
+    calendar.update(calendar_params)
+  end
+
   private
 
   def calendar_params
