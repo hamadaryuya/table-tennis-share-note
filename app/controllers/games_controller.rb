@@ -11,6 +11,10 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
 
+  def show
+    @game = Game.find_by(user_id: params[:user_id])
+  end
+
   def update
     @game = Game.find(params[:id])
     Game.update(update_game_params)

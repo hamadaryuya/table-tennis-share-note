@@ -11,6 +11,10 @@ class TrainingsController < ApplicationController
     @training = Training.find(params[:id])
   end
 
+  def show
+    @training = Training.find_by(user_id: params[:user_id])
+  end
+
   def update
     @training = Training.find(params[:id])
     Training.update(update_training_params)
