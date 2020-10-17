@@ -7,6 +7,23 @@ class GamesController < ApplicationController
     redirect_to "/"
   end
 
+  def edit
+    @game = Game.find(params[:id])
+  end
+
+  def update
+    @game = Game.find(params[:id])
+    Game.update(game_params)
+  end
+
+  def destroy
+    game = Game.find(params[:id])
+     if game.user_id == current_user.id
+      game.destroy
+      redirect_to "/"
+     end
+  end
+
   def game_params
     params.permit(:date, :start_date, :opponent, :result, :good_point, :game_introspection).merge(user_id: current_user.id)
   end
