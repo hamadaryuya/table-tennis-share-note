@@ -1,8 +1,15 @@
-<%= month_calendar calendars: @calendars do |date, calendar| %>
+<%= month_calendar calendars: @trainings do |date, calendar| %>
   <%= date %>
-    <% @calendars.each do |event| %>
+    <% @trainings.each do |event| %>
       <% if event.date == date %>
-        <%= link_to event.user.name, edit_calendar_path(event) %>
+        <%= link_to event.user.name, edit_training_path(event) %>
+      <% end %>
+     <% end %>
+     
+     <% @games.each do |game| %>
+      <% if game.date == date%>
+        <%= link_to game.user.name, edit_game_path(game)%>
       <% end %>
     <% end %>
 <% end %>
+
