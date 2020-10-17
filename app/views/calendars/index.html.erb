@@ -1,3 +1,8 @@
-<%= month_calendar do |date| %>
+<%= month_calendar calendars: @calendars do |date, calendar| %>
   <%= date %>
+    <% @calendars.each do |event| %>
+      <% if event.date == date %>
+        <%= link_to event.user.name, edit_calendar_path(event) %>
+      <% end %>
+    <% end %>
 <% end %>

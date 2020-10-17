@@ -1,6 +1,6 @@
 <h1>練習内容</h1>
  <div class="parent">
-   <%= form_with url: calendars_path, id: 'new_training', class: 'new_training', method: :post, local: true do |f| %>
+   <%= form_with(model: @calendar,id: 'new_training', class: 'new_training', local: true) do |f| %>
       <div class="field">
         <%= f.label :日付を選択, class: 'date_lavel' %>
         <%= f.date_field :date, class: 'select_date' %> 
@@ -23,7 +23,10 @@
 
     <div class="register_actions">
       <div class="actions">
-      <%= f.submit "登録" %>
+      <%= f.submit "変更" %>
+
+    <div class="field">
+      <%= link_to '削除', calendar_path, method: :delete %>
       </div>
   </div>
    <% end %>
