@@ -14,13 +14,6 @@ ActiveRecord::Schema.define(version: 2020_10_17_124350) do
 
   create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date", null: false
-    t.text "training_menu"
-    t.text "purpose"
-    t.text "introspection"
-    t.text "opponent"
-    t.text "result"
-    t.text "good_point"
-    t.text "game_introspection"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -29,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_10_17_124350) do
 
   create_table "games", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date", null: false
-    t.text "opponent"
+    t.text "opponent", null: false
     t.text "result"
     t.text "good_point"
     t.text "game_introspection"

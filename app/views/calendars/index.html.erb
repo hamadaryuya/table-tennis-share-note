@@ -5,6 +5,7 @@
         <%= link_to event.user.name, edit_training_path(event) %>
       <% end %>
      <% end %>
+     
      <% @games.each do |game| %>
       <% if game.date == date%>
         <%= link_to game.user.name, edit_game_path(game)%>
