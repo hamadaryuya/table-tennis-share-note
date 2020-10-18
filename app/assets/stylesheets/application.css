@@ -70,3 +70,7 @@ h1{
   padding: auto;
 }
 
+.user_name {
+  float: left;
+  font-size: large;
+}
