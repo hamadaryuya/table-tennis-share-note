@@ -1,4 +1,5 @@
 class CalendarsController < ApplicationController
+  before_action :move_to_index
 
   def index
     @trainings = Training.all
@@ -11,6 +12,12 @@ class CalendarsController < ApplicationController
 
   def training_params
     params.permit(:date, :training_menu, :purpose, :introspection).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
   
