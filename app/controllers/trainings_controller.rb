@@ -12,7 +12,7 @@ class TrainingsController < ApplicationController
   end
 
   def show
-    @training = Training.find_by(user_id: params[:user_id])
+    @training = Training.find(params[:id])
   end
 
   def update
