@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_18_130603) do
+ActiveRecord::Schema.define(version: 2020_10_19_052922) do
 
   create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date", null: false
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 2020_10_18_130603) do
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "training_id"
+    t.text "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "game_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "game_id"
     t.text "text"
     t.datetime "created_at", precision: 6, null: false

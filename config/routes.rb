@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :trainings do
     resources :comments, only: :create
   end
-  resources :games
+  resources :games do
+    resources :game_comments, only: :create
+  end
   
   root to: "calendars#index"
 end
