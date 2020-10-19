@@ -9,6 +9,8 @@ class TrainingsController < ApplicationController
 
   def edit
     @training = Training.find(params[:id])
+    @comment = Comment.new
+    @comments = @training.comments.includes(:user)
   end
 
   def show

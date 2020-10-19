@@ -9,6 +9,8 @@ class GamesController < ApplicationController
 
   def edit
     @game = Game.find(params[:id])
+    @game_comment = GameComment.new
+    @game_comments = @game.game_comments.includes(:user)
   end
 
   def show
