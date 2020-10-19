@@ -34,7 +34,7 @@
       <% if @comments %>
         <% @comments.each do |comment| %>
           <p>
-            <strong><%= link_to comment.user.name, "/" %>：</strong>
+            <strong><%= comment.user.name %>：</strong>
             <%= comment.text %>
           </p>
         <% end %>
