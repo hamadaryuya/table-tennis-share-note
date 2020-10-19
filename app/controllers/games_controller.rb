@@ -3,7 +3,7 @@ class GamesController < ApplicationController
 
   def create
     Game.create(game_params)
-    redirect_to "/"
+    redirect_to '/'
   end
 
   def update
@@ -13,10 +13,10 @@ class GamesController < ApplicationController
 
   def destroy
     game = Game.find(params[:id])
-     if game.user_id == current_user.id
+    if game.user_id == current_user.id
       game.destroy
-      redirect_to "/"
-     end
+      redirect_to '/'
+    end
   end
 
   private

@@ -3,7 +3,7 @@ class TrainingsController < ApplicationController
 
   def create
     Training.create(training_params)
-    redirect_to "/"
+    redirect_to '/'
   end
 
   def update
@@ -13,10 +13,10 @@ class TrainingsController < ApplicationController
 
   def destroy
     training = Training.find(params[:id])
-     if training.user_id == current_user.id
+    if training.user_id == current_user.id
       training.destroy
-      redirect_to "/"
-     end
+      redirect_to '/'
+    end
   end
 
   private

@@ -1,25 +1,30 @@
 <h1>試合内容</h1>
-  <div class="field">
+  <div class="all_game">
     <div class="list">
+
       <label for="label">日付</label><br>
         <div class="label">
-        <%= @game.date %><br>
+          <%= @game.date %><br>
         </div>
+
       <label for="label">練習メニュー</label><br>
         <div class="label">
-        <%= @game.opponent%><br>
+          <%= @game.opponent%><br>
         </div>
+
       <label for="label">目的</label><br>
         <div class="label">
-        <%= @game.result %><br>
+          <%= @game.result %><br>
         </div>
+
       <label for="label">反省</label><br>
         <div class="label">
-        <%= @game.good_point %><br>
+          <%= @game.good_point %><br>
         </div>
-        <label for="label">反省</label><br>
+
+      <label for="label">反省</label><br>
         <div class="label">
-        <%= @game.game_introspection %><br>
+          <%= @game.game_introspection %><br>
         </div>
     </div>
     
@@ -27,22 +32,25 @@
       <div class="container">
         <% if current_user %>
           <%= form_with(model: [@game, @game_comment], local: true) do |f| %>
-           <%= f.text_area :text, placeholder: "コメントする", rows: "2" %><br>
-           <%= f.submit "SEND" %>
-         <% end %>
-         <% else %>
-        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+            <%= f.text_area :text, placeholder: "コメントする", rows: "2" %><br>
+            <div class="submit_btn">
+            <%= f.submit "SEND" %>
+            </div>
+          <% end %>
         <% end %>
         <div class="comments">
-      <h4>＜コメント一覧＞</h4>
-      <% if @game_comments %>
-        <% @game_comments.each do |comment| %>
-          <p>
-            <strong><%= comment.user.name %>：</strong>
-            <%= comment.text %>
-          </p>
-        <% end %>
-      <% end %>
+          <div class=comment_title>
+            <h4>＜コメント一覧＞</h4>
+          </div>
+            <% if @game_comments %>
+              <% @game_comments.each do |comment| %>
+               <p>
+                 <strong><%= comment.user.name %>：</strong>
+                 <%= comment.text %>
+               </p>
+              <% end %>
+            <% end %>
+        </div>
+      </div>
     </div>
-   </div>
   </div>

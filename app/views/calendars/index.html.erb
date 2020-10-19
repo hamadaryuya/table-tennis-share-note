@@ -5,7 +5,9 @@
         <% if current_user.id == event.user_id %>
          <%= link_to event.user.name, edit_training_path(event) %>
         <% else %>
+        <div class="training_user_name">
          <%=  link_to event.user.name, "/trainings/#{event.id}" %>
+         </div>
         <% end %>
       <% end %>
     <% end %>

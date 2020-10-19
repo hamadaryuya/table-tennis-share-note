@@ -26,37 +26,40 @@
         <%= f.text_area :game_introspection, autofocus: true %>
       </div>
 
-    <div class="register_actions">
-      <div class="actions">
-      <%= f.submit "変更" %>
-
-    <div class="field">
-      <%= link_to '削除', game_path, method: :delete %>
-    </div>
-
+      <div class="register_actions">
+        <div class="actions">
+          <%= f.submit "変更" %>
+        </div>
+        <div class="field">
+          <%= link_to '削除', game_path, method: :delete %>
+        </div>
       </div>
-      <% end %>
+    <% end %>
+
+
       <div class="comment_contents">
-      <div class="container">
-        <% if current_user %>
-          <%= form_with(model: [@game, @game_comment], local: true) do |f| %>
-           <%= f.text_area :text, placeholder: "コメントする", rows: "2" %><br>
-           <%= f.submit "SEND" %>
-         <% end %>
-         <% else %>
-        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
-        <% end %>
-        <div class="comments">
-      <h4>＜コメント一覧＞</h4>
-      <% if @game_comments %>
-        <% @game_comments.each do |comment| %>
-          <p>
-            <strong><%= comment.user.name %>：</strong>
-            <%= comment.text %>
-          </p>
-        <% end %>
-      <% end %>
-    </div>
-   </div>
+        <div class="container">
+          <% if current_user %>
+           <%= form_with(model: [@game, @game_comment], local: true) do |f| %>
+             <%= f.text_area :text, placeholder: "コメントする", rows: "2" %><br>
+            <div class="submit_btn">
+             <%= f.submit "SEND" %>
+            </div>
+           <% end %>
+          <% end %>
+        </div>
+          <div class="comments">
+            <div class=comment_title>
+              <h4>＜コメント一覧＞</h4>
+            </div>
+              <% if @game_comments %>
+                <% @game_comments.each do |comment| %>
+                 <p>
+                  <strong><%= comment.user.name %>：</strong>
+                    <%= comment.text %>
+                 </p>
+                <% end %>
+              <% end %>
+          </div>
+      </div>
  </div>
-   
