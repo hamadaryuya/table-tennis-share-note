@@ -18,4 +18,27 @@
         <%= @training.introspection%><br>
         </div>
     </div>
+    
+    <div class="comment_contents">
+      <div class="container">
+        <% if current_user %>
+          <%= form_with(model: [@training, @comment], local: true) do |f| %>
+           <%= f.text_area :text, placeholder: "コメントする", rows: "2" %><br>
+           <%= f.submit "SEND" %>
+         <% end %>
+         <% else %>
+        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <% end %>
+        <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.name, "/" %>：</strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+   </div>
   </div>

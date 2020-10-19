@@ -13,6 +13,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find_by(user_id: params[:user_id])
+    @comment = Comment.find_by(user_id: params[:user_id])
   end
 
   def update
