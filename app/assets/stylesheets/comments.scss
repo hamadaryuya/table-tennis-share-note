@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.parent {
+  width: 100%;
+}
+
+.field {
+  width: 75%;
+}
 .comment_contents {
   text-align: center;
 }
@@ -12,4 +19,11 @@
 
 .comments {
   margin-top: 30px;
+  border: solid 2px black;
+  background-color: white;
+  text-align: left;
+}
+
+.comment_title {
+  text-align: center;
 }

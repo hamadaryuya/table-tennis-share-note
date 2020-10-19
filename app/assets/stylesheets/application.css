@@ -20,13 +20,25 @@
   padding: 15px 0;
   margin: 0 auto;
   text-align: center;
-  background-color: rgb(189, 200, 250);
+  background-color: rgb(255, 255, 255);
 }
 
 .grid-6 {
   text-align: left;
   display: table-cell;
- }
+  color: #f86767;
+  padding: 0.5em;
+  line-height: 1.3;
+  background: #faa26f;
+  border-radius: 25px 0px 0px 25px;
+}
+
+.grid-6:before {
+  content: '●';
+  color: white;
+  margin-right: 8px;
+}
+
 
 .a {
   text-decoration: none;
@@ -35,24 +47,6 @@
  .grid-62 {
    display: block;
    text-align: center;
- }
-
- .head_left {
-   margin-right: 20px;
-   border: solid #CC3366;
-   border-radius: 4px;
-   padding: 6px;
-   text-decoration: none;
-   font-size: large;
- }
-
- .head_right {
-   margin-left: 60px;
-   border: solid #CC3366;
-   border-radius: 4px;
-   padding: 6px;
-   text-decoration: none;
-   font-size: large;
  }
 
 h1, h2, h3, h4, h5, h6{
@@ -70,7 +64,97 @@ h1{
   padding: auto;
 }
 
+.head_left {
+  display: inline-block;
+  position: relative;
+  padding: 0.35em 1em;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  text-decoration: none;
+  margin-right: 400px;
+}
+
+.head_left:before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 0;
+  width: -webkit-calc(100% - 16px);
+  width: calc(100% - 16px);
+  height: 0;
+  border: solid 8px transparent;
+  border-bottom-color: #8eacec;/*ボタン色より明るめの色に*/
+}
+
+.head_left:active {
+  /*押したとき*/
+  padding: 0.32em 0.9em;
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+
+.head_left:active:before { 
+  width: -webkit-calc(100% - 12px);
+  width: calc(100% - 12px);
+}
+
+.head_left:active:before {
+  top:-12px;
+  border-width: 6px;
+}
+
+.head_right {
+  display: inline-block;
+  position: relative;
+  padding: 0.35em 1em;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  text-decoration: none;
+}
+
+.head_right:before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 0;
+  width: -webkit-calc(100% - 16px);
+  width: calc(100% - 16px);
+  height: 0;
+  border: solid 8px transparent;
+  border-bottom-color: #8eacec;/*ボタン色より明るめの色に*/
+}
+
+.head_right:active {
+  /*押したとき*/
+  padding: 0.32em 0.9em;
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+
+.head_right:active:before { 
+  width: -webkit-calc(100% - 12px);
+  width: calc(100% - 12px);
+}
+
+.head_right:active:before {
+  top:-12px;
+  border-width: 6px;
+}
+
 .user_name {
   float: left;
   font-size: large;
+  position: relative;
+  padding: 0.25em 0;
+}
+.user_name:after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: -webkit-linear-gradient(to right, rgb(230, 90, 90), transparent);
+  background: linear-gradient(to right, rgb(230, 90, 90), transparent);
+}
+
+.user_name:before {
+  content: "ユーザー名:";
 }
