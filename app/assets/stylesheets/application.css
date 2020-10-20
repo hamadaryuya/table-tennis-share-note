@@ -162,3 +162,8 @@ h1{
 .link_user_name {
   text-decoration: none;
 }
+
+.footer_message {
+  display: flex;
+  justify-content: center;
+}
