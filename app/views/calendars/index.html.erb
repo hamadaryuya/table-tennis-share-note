@@ -3,10 +3,12 @@
     <% @trainings.each do |event| %>
       <% if event.date == date %>
         <% if current_user.id == event.user_id %>
-         <%= link_to event.user.name, edit_training_path(event) %>
+         <div class="training_user_name">
+           <%= link_to event.user.name, edit_training_path(event), class: "text_name" %><br>
+         </div>
         <% else %>
-        <div class="training_user_name">
-         <%=  link_to event.user.name, "/trainings/#{event.id}" %>
+         <div class="training_user_name">
+           <%=  link_to event.user.name, "/trainings/#{event.id}", class: "text_name" %><br>
          </div>
         <% end %>
       <% end %>
@@ -15,9 +17,13 @@
      <% @games.each do |game| %>
       <% if game.date == date%>
         <% if current_user.id == game.user_id %>
-         <%= link_to game.user.name, edit_game_path(game)%>
+          <div class="game_user_name">
+            <%= link_to game.user.name, edit_game_path(game), class: "text_name"%><br>
+          </div>
         <% else %>
-          <%=  link_to game.user.name, "/games/#{game.id}" %>
+          <div class="game_user_name">
+            <%=  link_to game.user.name, "/games/#{game.id}", class:"text_name" %><br>
+          </div>
         <% end %>
       <% end %>
     <% end %>

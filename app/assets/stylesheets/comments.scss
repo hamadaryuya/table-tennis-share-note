@@ -2,3 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.comments {
+  margin-top: 90px;
+  border: solid 2px black;
+  background-color: white;
+  text-align: left;
+  width: 50%;
+  margin-left: 365px;
+  margin:  0 auto;
+}
+
+.comment_title {
+  text-align: center;
+}

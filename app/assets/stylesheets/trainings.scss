@@ -2,3 +2,56 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.parent {
+  background-color: crimson;
+  display: table-cell;
+  vertical-align:center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: inline;
+}
+
+.new_training {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.field {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.actions {
+  margin-bottom: 15px;
+}
+
+.all_training {
+  display: table-cell;
+  vertical-align:center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: inline;
+}
+
+.list {
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.label {
+  width: 200px;
+  text-align: center;
+  border: 2px solid;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.submit_btn {
+  margin-bottom: 30px;
+}
+

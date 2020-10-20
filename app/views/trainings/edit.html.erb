@@ -2,7 +2,7 @@
  <div class="parent">
    <%= form_with(model: @training,id: 'new_training', class: 'new_training', local: true) do |f| %>
      <div class="field">
-       <%= f.label :日付を選択, class: 'date_lavel' %>
+       <%= f.label :日付を選択, class: 'date_lavel' %><br>
        <%= f.date_field :date, class: 'select_date' %> 
       </div>
 
@@ -21,7 +21,7 @@
         <%= f.text_area :introspection, autofocus: true %>
       </div>
 
-      <div class="register_actions">
+      <div class="field">
         <div class="actions">
           <%= f.submit "変更" %>
         </div>
@@ -57,5 +57,5 @@
            </div>
         </div>
       </div>
-  </div>
+ </div>
    

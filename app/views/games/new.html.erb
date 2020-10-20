@@ -2,7 +2,7 @@
  <div class="parent">
    <%= form_with url: games_path, id: 'new_games', class: 'new_games', method: :post, local: true do |f| %>
       <div class="field">
-        <%= f.label :日付を選択, class: 'date_lavel' %>
+        <%= f.label :日付を選択, class: 'date_lavel' %><br>
         <%= f.date_field :date, class: 'select_date' %> 
       </div>
 

@@ -7,17 +7,17 @@
           <%= @game.date %><br>
         </div>
 
-      <label for="label">練習メニュー</label><br>
+      <label for="label">対戦相手</label><br>
         <div class="label">
           <%= @game.opponent%><br>
         </div>
 
-      <label for="label">目的</label><br>
+      <label for="label">結果</label><br>
         <div class="label">
           <%= @game.result %><br>
         </div>
 
-      <label for="label">反省</label><br>
+      <label for="label">良かった点</label><br>
         <div class="label">
           <%= @game.good_point %><br>
         </div>
@@ -33,24 +33,24 @@
         <% if current_user %>
           <%= form_with(model: [@game, @game_comment], local: true) do |f| %>
             <%= f.text_area :text, placeholder: "コメントする", rows: "2" %><br>
-            <div class="submit_btn">
-            <%= f.submit "SEND" %>
-            </div>
+             <div class="submit_btn">
+               <%= f.submit "SEND" %>
+             </div>
           <% end %>
         <% end %>
-        <div class="comments">
-          <div class=comment_title>
-            <h4>＜コメント一覧＞</h4>
-          </div>
-            <% if @game_comments %>
-              <% @game_comments.each do |comment| %>
-               <p>
-                 <strong><%= comment.user.name %>：</strong>
-                 <%= comment.text %>
-               </p>
+          <div class="comments">
+            <div class=comment_title>
+              <h4>＜コメント一覧＞</h4>
+            </div>
+              <% if @game_comments %>
+                <% @game_comments.each do |comment| %>
+                 <p>
+                   <strong><%= comment.user.name %>：</strong>
+                  <%= comment.text %>
+                 </p>
+                <% end %>
               <% end %>
-            <% end %>
-        </div>
+          </div>
       </div>
     </div>
   </div>

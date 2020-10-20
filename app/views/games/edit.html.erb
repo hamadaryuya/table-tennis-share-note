@@ -2,7 +2,7 @@
  <div class="parent">
    <%= form_with(model: @game,id: 'new_training', class: 'new_training', local: true) do |f| %>
       <div class="field">
-        <%= f.label :日付を選択, class: 'date_lavel' %>
+        <%= f.label :日付を選択, class: 'date_lavel' %><br>
         <%= f.date_field :date, class: 'select_date' %> 
       </div>
 
@@ -30,6 +30,7 @@
         <div class="actions">
           <%= f.submit "変更" %>
         </div>
+        
         <div class="field">
           <%= link_to '削除', game_path, method: :delete %>
         </div>
@@ -47,7 +48,6 @@
             </div>
            <% end %>
           <% end %>
-        </div>
           <div class="comments">
             <div class=comment_title>
               <h4>＜コメント一覧＞</h4>
@@ -61,5 +61,6 @@
                 <% end %>
               <% end %>
           </div>
+        </div>
       </div>
  </div>

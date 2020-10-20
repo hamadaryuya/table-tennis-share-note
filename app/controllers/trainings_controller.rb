@@ -8,7 +8,7 @@ class TrainingsController < ApplicationController
 
   def update
     @training = Training.find(params[:id])
-    Training.update(update_training_params)
+    @training.update(update_training_params)
   end
 
   def destroy

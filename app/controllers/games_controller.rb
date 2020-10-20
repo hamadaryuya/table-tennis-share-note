@@ -8,7 +8,7 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    Game.update(update_game_params)
+    @game.update(update_game_params)
   end
 
   def destroy
