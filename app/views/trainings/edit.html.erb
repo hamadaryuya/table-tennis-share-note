@@ -8,26 +8,27 @@
 
       <div class="field">
         <%= f.label :"練習メニュー" %> <br>
-        <%= f.text_area :training_menu, autofocus: true %>
+        <%= f.text_area :training_menu, autofocus: true, class: 'training_menu' %>
       </div>
 
       <div class="field">
         <%= f.label :"目的" %><br>
-        <%= f.text_area :purpose, autofocus: true %>
+        <%= f.text_area :purpose, autofocus: true, class: 'purpose' %>
       </div>
 
       <div class="field">
         <%= f.label :"反省" %><br>
-        <%= f.text_area :introspection, autofocus: true %>
+        <%= f.text_area :introspection, autofocus: true, class: 'introspection' %>
       </div>
 
       <div class="field">
         <div class="actions">
-          <%= f.submit "変更" %>
-        </div>
+          <%= f.submit "変更", class: 'change_btn' %>
+       
 
-        <div class="field">
-          <%= link_to '削除', training_path, method: :delete %>
+          <div class="change_field">
+            <%= link_to '削除', training_path, method: :delete, class: 'delete_btn' %>
+          </div>
         </div>
       </div>
    <% end %>
@@ -37,9 +38,9 @@
          <strong>コメントをしてください<strong>
           <% if current_user %>
             <%= form_with(model: [@training, @comment], local: true) do |f| %>
-              <%= f.text_area :text, placeholder: "コメントする", rows: "2" %><br>
+              <%= f.text_area :text, placeholder: "コメントする", rows: "2", class: 'comment_area' %><br>
                 <div class="submit_btn">
-                  <%= f.submit "SEND" %>
+                  <%= f.submit "送信", class: 'send_btn' %>
                 </div>
             <% end %>
           <% end %>

@@ -9,7 +9,7 @@
 
       <label for="label">練習メニュー</label><br>
         <div class="label">
-          <%= @training.training_menu%><br>
+          <%= @training.training_menu %>
         </div>
 
       <label for="label">目的</label><br>
@@ -28,9 +28,9 @@
         <% if current_user %>
          <strong>コメントをしてください<strong>
           <%= form_with(model: [@training, @comment], local: true) do |f| %>
-            <%= f.text_area :text, placeholder: "コメントする", rows: "2" %><br>
+            <%= f.text_area :text, placeholder: "コメントする", rows: "2", class: 'comment_area' %><br>
              <div class="submit_btn">
-               <%= f.submit "SEND" %>
+               <%= f.submit "送信", class: 'send_btn' %>
              </div>
           <% end %>
         <% end %>

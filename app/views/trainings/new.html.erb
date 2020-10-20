@@ -10,22 +10,22 @@
 
       <div class="field">
         <%= f.label :"練習メニュー" %> <br>
-        <%= f.text_area :training_menu, autofocus: true %>
+        <%= f.text_area :training_menu, autofocus: true, class: "training_menu" %>
       </div>
 
       <div class="field">
         <%= f.label :"目的" %><br>
-        <%= f.text_area :purpose, autofocus: true %>
+        <%= f.text_area :purpose, autofocus: true, class: "purpose" %>
       </div>
 
       <div class="field">
         <%= f.label :"反省" %><br>
-        <%= f.text_area :introspection, autofocus: true %>
+        <%= f.text_area :introspection, autofocus: true, class: "introspection" %>
       </div>
 
         <div class="register_actions">
           <div class="actions">
-            <%= f.submit "登録" %>
+            <%= f.submit "登録", class: "register_btn" %>
           </div>
         </div>
    <% end %>

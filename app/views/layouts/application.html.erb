@@ -12,7 +12,7 @@
   <body>
     <header class="header">
       <div class="header__bar row">
-        <h2 class="grid-61"><a href="/">卓球共有ノート</a></h2>
+         <h2 class="grid-61"><a href="/">卓球共有ノート</a></h2>
           <% if user_signed_in? %>
            <div class="user_name"%>
             <span><%= link_to current_user.name, "/users/:id/edit", class: "link_user_name" %>
@@ -31,6 +31,8 @@
       </div>
     </header>
     <%= yield %>
+    <footer>
+    </footer>
   </body>
 </html>
 

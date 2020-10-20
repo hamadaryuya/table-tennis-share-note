@@ -8,31 +8,31 @@
 
       <div class="field">
         <%= f.label :"対戦相手" %> <br>
-        <%= f.text_area :opponent, autofocus: true %>
+        <%= f.text_area :opponent, autofocus: true, class: 'opponent' %>
       </div>
 
       <div class="field">
         <%= f.label :"結果" %><br>
-        <%= f.text_area :result, autofocus: true %>
+        <%= f.text_area :result, autofocus: true, class: 'result' %>
       </div>
 
       <div class="field">
         <%= f.label :"良かった点" %><br>
-        <%= f.text_area :good_point, autofocus: true %>
+        <%= f.text_area :good_point, autofocus: true, class: 'good_point' %>
       </div>
 
       <div class="field">
         <%= f.label :"反省点" %><br>
-        <%= f.text_area :game_introspection, autofocus: true %>
+        <%= f.text_area :game_introspection, autofocus: true, class: 'game_introspection' %>
       </div>
 
       <div class="register_actions">
         <div class="actions">
-          <%= f.submit "変更" %>
-        </div>
+          <%= f.submit "変更", class: 'change_btn' %>
         
-        <div class="field">
-          <%= link_to '削除', game_path, method: :delete %>
+           <div class="change_field">
+             <%= link_to '削除', game_path, method: :delete, class: 'delete_btn' %>
+           </div>
         </div>
       </div>
     <% end %>
@@ -43,9 +43,9 @@
          <strong>コメントをしてください<strong>
           <% if current_user %>
            <%= form_with(model: [@game, @game_comment], local: true) do |f| %>
-             <%= f.text_area :text, placeholder: "コメントする", rows: "2" %><br>
+             <%= f.text_area :text, placeholder: "コメントする", rows: "2", class: 'comment_area' %><br>
             <div class="submit_btn">
-             <%= f.submit "SEND" %>
+             <%= f.submit "送信", class: 'send_btn' %>
             </div>
            <% end %>
           <% end %>
