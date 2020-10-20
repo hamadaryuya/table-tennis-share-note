@@ -34,6 +34,7 @@
 
       <div class="comment_contents">
         <div class="container">
+         <strong>コメントをしてください<strong>
           <% if current_user %>
             <%= form_with(model: [@training, @comment], local: true) do |f| %>
               <%= f.text_area :text, placeholder: "コメントする", rows: "2" %><br>
