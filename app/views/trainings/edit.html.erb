@@ -1,32 +1,63 @@
 <h1>練習内容</h1>
  <div class="parent">
    <%= form_with(model: @training,id: 'new_training', class: 'new_training', local: true) do |f| %>
-      <div class="field">
-        <%= f.label :日付を選択, class: 'date_lavel' %>
-        <%= f.date_field :date, class: 'select_date' %> 
+     <div class="field">
+       <%= f.label :日付を選択, class: 'date_lavel' %><br>
+       <%= f.date_field :date, class: 'select_date' %> 
       </div>
 
       <div class="field">
         <%= f.label :"練習メニュー" %> <br>
-        <%= f.text_area :training_menu, autofocus: true %>
+        <%= f.text_area :training_menu, autofocus: true, class: 'training_menu' %>
       </div>
 
       <div class="field">
         <%= f.label :"目的" %><br>
-        <%= f.text_area :purpose, autofocus: true %>
+        <%= f.text_area :purpose, autofocus: true, class: 'purpose' %>
       </div>
 
       <div class="field">
         <%= f.label :"反省" %><br>
-        <%= f.text_area :introspection, autofocus: true %>
+        <%= f.text_area :introspection, autofocus: true, class: 'introspection' %>
       </div>
 
-    <div class="register_actions">
-      <div class="actions">
-      <%= f.submit "変更" %>
+      <div class="field">
+        <div class="actions">
+          <%= f.submit "変更", class: 'change_btn' %>
+       
 
-    <div class="field">
-      <%= link_to '削除', training_path, method: :delete %>
+          <div class="change_field">
+            <%= link_to '削除', training_path, method: :delete, class: 'delete_btn' %>
+          </div>
+        </div>
       </div>
-  </div>
    <% end %>
+
+      <div class="comment_contents">
+        <div class="container">
+         <strong>コメントをしてください<strong>
+          <% if current_user %>
+            <%= form_with(model: [@training, @comment], local: true) do |f| %>
+              <%= f.text_area :text, placeholder: "コメントする", rows: "2", class: 'comment_area' %><br>
+                <div class="submit_btn">
+                  <%= f.submit "送信", class: 'send_btn' %>
+                </div>
+            <% end %>
+          <% end %>
+           <div class="comments">
+              <div class=comment_title>
+               <h4>＜コメント一覧＞</h4>
+              </div>
+                <% if @comments %>
+                   <% @comments.each do |comment| %>
+                    <p>
+                     <strong><%= comment.user.name %>：</strong>
+                     <%= comment.text %>
+                    </p>
+                   <% end %>
+                <% end %>
+           </div>
+        </div>
+      </div>
+ </div>
+   

@@ -2,38 +2,66 @@
  <div class="parent">
    <%= form_with(model: @game,id: 'new_training', class: 'new_training', local: true) do |f| %>
       <div class="field">
-        <%= f.label :日付を選択, class: 'date_lavel' %>
+        <%= f.label :日付を選択, class: 'date_lavel' %><br>
         <%= f.date_field :date, class: 'select_date' %> 
       </div>
 
       <div class="field">
         <%= f.label :"対戦相手" %> <br>
-        <%= f.text_area :opponent, autofocus: true %>
+        <%= f.text_area :opponent, autofocus: true, class: 'opponent' %>
       </div>
 
       <div class="field">
         <%= f.label :"結果" %><br>
-        <%= f.text_area :result, autofocus: true %>
+        <%= f.text_area :result, autofocus: true, class: 'result' %>
       </div>
 
       <div class="field">
         <%= f.label :"良かった点" %><br>
-        <%= f.text_area :good_point, autofocus: true %>
+        <%= f.text_area :good_point, autofocus: true, class: 'good_point' %>
       </div>
 
       <div class="field">
         <%= f.label :"反省点" %><br>
-        <%= f.text_area :game_introspection, autofocus: true %>
+        <%= f.text_area :game_introspection, autofocus: true, class: 'game_introspection' %>
       </div>
 
-    <div class="register_actions">
-      <div class="actions">
-      <%= f.submit "変更" %>
-
-    <div class="field">
-      <%= link_to '削除', game_path, method: :delete %>
-    </div>
-
+      <div class="register_actions">
+        <div class="actions">
+          <%= f.submit "変更", class: 'change_btn' %>
+        
+           <div class="change_field">
+             <%= link_to '削除', game_path, method: :delete, class: 'delete_btn' %>
+           </div>
+        </div>
       </div>
-  </div>
-   <% end %>
+    <% end %>
+
+
+      <div class="comment_contents">
+        <div class="container">
+         <strong>コメントをしてください<strong>
+          <% if current_user %>
+           <%= form_with(model: [@game, @game_comment], local: true) do |f| %>
+             <%= f.text_area :text, placeholder: "コメントする", rows: "2", class: 'comment_area' %><br>
+            <div class="submit_btn">
+             <%= f.submit "送信", class: 'send_btn' %>
+            </div>
+           <% end %>
+          <% end %>
+          <div class="comments">
+            <div class=comment_title>
+              <h4>＜コメント一覧＞</h4>
+            </div>
+              <% if @game_comments %>
+                <% @game_comments.each do |comment| %>
+                 <p>
+                  <strong><%= comment.user.name %>：</strong>
+                    <%= comment.text %>
+                 </p>
+                <% end %>
+              <% end %>
+          </div>
+        </div>
+      </div>
+ </div>

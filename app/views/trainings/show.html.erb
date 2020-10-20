@@ -1,0 +1,52 @@
+<h1>練習内容</h1>
+  <div class="all_training">
+    <div class="list">
+
+      <label for="label">日付</label><br>
+        <div class="label">
+          <%= @training.date %><br>
+        </div>
+
+      <label for="label">練習メニュー</label><br>
+        <div class="label">
+          <%= @training.training_menu %>
+        </div>
+
+      <label for="label">目的</label><br>
+        <div class="label">
+          <%= @training.purpose %><br>
+        </div>
+        
+      <label for="label">反省</label><br>
+        <div class="label">
+          <%= @training.introspection%><br>
+        </div>
+    </div>
+    
+    <div class="comment_contents">
+      <div class="container">
+        <% if current_user %>
+         <strong>コメントをしてください<strong>
+          <%= form_with(model: [@training, @comment], local: true) do |f| %>
+            <%= f.text_area :text, placeholder: "コメントする", rows: "2", class: 'comment_area' %><br>
+             <div class="submit_btn">
+               <%= f.submit "送信", class: 'send_btn' %>
+             </div>
+          <% end %>
+        <% end %>
+          <div class="comments">
+            <div class=comment_title>
+              <h4>＜コメント一覧＞</h4>
+            </div>
+              <% if @comments %>
+                <% @comments.each do |comment| %>
+                 <p>
+                   <strong><%= comment.user.name %>：</strong>
+                   <%= comment.text %>
+                 </p>
+                <% end %>
+              <% end %>
+          </div>
+      </div>
+    </div>
+  </div>

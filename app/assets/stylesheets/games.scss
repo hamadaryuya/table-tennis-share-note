@@ -2,38 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.parent {
-  position: relative;
-  height: 200px;
-}
-
-.new_games {
- position: absolute;
- height: 50px;
- width: 200px;
- top: 50%;
- left: 50%;
- transform: translate(-50%,-50%);
- font-size: 16px;
-}
-
-.field {
-  margin: 15px;
-}
-
-.register_actions {
+.all_game {
+  display: table-cell;
+  vertical-align:center;
+  height: 100%;
+  width: 100%;
   text-align: center;
+  display: inline;
 }
 
-.success {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column;
-  margin-top: 100px;
+.good_point {
+  width: 20%;
 }
 
-.update {
-  justify-content: center;
-  margin-bottom: 80px;
+.game_introspection {
+  width: 20%;
+}
+
+.new_game {
+  margin-top: 20px;
 }
