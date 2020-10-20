@@ -1,6 +1,6 @@
 <h1>試合内容</h1>
  <div class="parent">
-   <%= form_with url: games_path, id: 'new_games', class: 'new_games', method: :post, local: true do |f| %>
+   <%= form_with url: games_path, id: 'new_game', class: 'new_game', method: :post, local: true do |f| %>
       <div class="field">
         <%= f.label :日付を選択, class: 'date_lavel' %><br>
         <%= f.date_field :date, class: 'select_date' %> 
@@ -8,27 +8,27 @@
 
       <div class="field">
         <%= f.label :"対戦相手" %> <br>
-        <%= f.text_area :opponent, autofocus: true %>
+        <%= f.text_area :opponent, autofocus: true, class: 'opponent' %>
       </div>
 
       <div class="field">
         <%= f.label :"結果" %><br>
-        <%= f.text_area :result, autofocus: true %>
+        <%= f.text_area :result, autofocus: true, class: 'result' %>
       </div>
 
       <div class="field">
         <%= f.label :"良かった点" %><br>
-        <%= f.text_area :good_point, autofocus: true %>
+        <%= f.text_area :good_point, autofocus: true, class: 'good_point' %>
       </div>
 
       <div class="field">
         <%= f.label :"反省点" %><br>
-        <%= f.text_area :game_introspection, autofocus: true %>
+        <%= f.text_area :game_introspection, autofocus: true, class: 'game_introspection' %>
       </div>
 
       <div class="register_actions">
         <div class="actions">
-          <%= f.submit "登録" %>
+          <%= f.submit "登録",class: "register_btn" %>
         </div>
       </div>
    <% end %>
