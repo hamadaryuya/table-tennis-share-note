@@ -23,7 +23,7 @@
   background-color: rgb(255, 255, 255);
 }
 
-.grid-6 {
+.grid-61 {
   text-align: left;
   display: table-cell;
   color: #f86767;
@@ -33,7 +33,7 @@
   border-radius: 25px 0px 0px 25px;
 }
 
-.grid-6:before {
+.grid-61:before {
   content: '●';
   color: white;
   margin-right: 8px;
@@ -157,4 +157,8 @@ h1{
 
 .user_name:before {
   content: "ユーザー名:";
+}
+
+.link_user_name {
+  text-decoration: none;
 }
