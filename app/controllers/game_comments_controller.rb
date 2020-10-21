@@ -1,7 +1,7 @@
 class GameCommentsController < ApplicationController
   def create
     game_coment = GameComment.create(game_comment_params)
-    redirect_to '/'
+    redirect_to request.referer
   end
 
   private
