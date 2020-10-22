@@ -20,7 +20,7 @@
   padding: 15px 0;
   margin: 0 auto;
   text-align: center;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 }
 
 .grid-61 {
@@ -163,11 +163,6 @@ h1{
   text-decoration: none;
 }
 
-.footer_message {
-  display: flex;
-  justify-content: center;
-}
-
 .error-alert {
   display: flex;
   justify-content: center;
@@ -178,4 +173,8 @@ h1{
   font-size: 1.3vw;
   list-style: circle;
   color: rgb(182, 48, 0);
+}
+
+footer {
+  background-image: url(/image/takkyu.jpg);
 }
