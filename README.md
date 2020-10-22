@@ -1,31 +1,33 @@
-# アプリケーション名(Application Name)
+# :running:アプリケーション名(Application Name)
 **卓球共有ノート**  
-
-### :balooon:デモ画面(Description)  
+  
+# :running:デモ画面(Description)  
 ![デモ画面](https://user-images.githubusercontent.com/70522981/96865763-57323680-14a5-11eb-9277-3f45afd7fc9e.gif)
-
-
-# 課題解決  
+  
+  
+# :running:課題解決  
 従来存在する卓球ノートをWeb上で使用できるようにしました。ポイントは**共有してアドバイスをお互い出来ること**です！  
 個人が見るだけでは無く、人の投稿にコメント機能を搭載することで、思考力、技術力を育てます！
+  
 
-# 要件定義  
-<img width="1177" alt="1506c4357925d900722ae12b2bbb6bf1" src="https://user-images.githubusercontent.com/70522981/96856254-a9b92600-1498-11eb-8c33-7451f9a4c2d8.png">
+# :running:要件定義  
+<img width="1177" alt="1506c4357925d900722ae12b2bbb6bf1" src="https://user-images.githubusercontent.com/70522981/96856254-a9b92600-1498-11eb-8c33-7451f9a4c2d8.png">  
 
-# :balooon:開発環境  
+# :running:開発環境  
 ## [言語]
 Ruby2.6.5  
 Ruby on Rails 6.0.3.4   
 ## [OS]  
 macOS Catalina 10.15.6
+  
 
-# :balooon:URL,認証情報  
+# :running:URL,認証情報  
 https://table-tennis-share-note.herokuapp.com/  
 ## 認証情報  
 ユーザー名 :ryuya
 パスワード :ryuya1204  
 
-# :balooon:アプリのアカウント情報  
+# :running:アプリのアカウント情報  
 ## デモアカウント情報  
 
 NAME :デモ太郎
@@ -35,8 +37,9 @@ password :demodemo1
 NAME :卓球太郎  
 e-mail :takkyu@takkyu.com
 password :takkyu1
+  
 
-# :balooon:利用方法  
+# :running:利用方法  
 ## アカウント情報で新規登録 or ログイン  
 <img width="1263" alt="ログイン画面" src="https://user-images.githubusercontent.com/70522981/96863294-9c546980-14a1-11eb-894e-db38c4f8f3c4.png">  
 
