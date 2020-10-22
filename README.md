@@ -32,12 +32,12 @@ https://table-tennis-share-note.herokuapp.com/
 ## デモアカウント情報  
 
 NAME :デモ太郎  
-e-mail :demodemo@demodemo.com  
-password :demodemo1  
+E-MAIL :demodemo@demodemo.com  
+PASSWORD :demodemo1  
 
 NAME :卓球太郎  
-e-mail :takkyu@takkyu.com  
-password :takkyu1  
+EーMAIL :takkyu@takkyu.com  
+PASSWORD :takkyu1  
   
 
 # :tada:利用方法  
