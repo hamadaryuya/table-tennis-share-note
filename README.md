@@ -31,13 +31,13 @@ https://table-tennis-share-note.herokuapp.com/
 # :book:アプリのアカウント情報  
 ## デモアカウント情報  
 
-NAME :デモ太郎
-e-mail :demodemo@demodemo.com
+NAME :デモ太郎  
+e-mail :demodemo@demodemo.com  
 password :demodemo1  
 
 NAME :卓球太郎  
-e-mail :takkyu@takkyu.com
-password :takkyu1
+e-mail :takkyu@takkyu.com  
+password :takkyu1  
   
 
 # :tada:利用方法  
