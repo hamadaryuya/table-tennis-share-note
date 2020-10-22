@@ -1,6 +1,7 @@
 <h1>試合内容</h1>
  <div class="parent">
    <%= form_with(model: @game,id: 'new_training', class: 'new_training', local: true) do |f| %>
+    <%= render 'share/error_messages', model: f.object %>
       <div class="field">
         <%= f.label :日付を選択, class: 'date_lavel' %><br>
         <%= f.date_field :date, class: 'select_date' %> 

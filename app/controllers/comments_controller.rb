@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     coment = Comment.create(comment_params)
-    redirect_to '/'
+    redirect_to request.referer
   end
 
   private

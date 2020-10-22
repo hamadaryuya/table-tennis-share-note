@@ -1,14 +1,27 @@
 class TrainingsController < ApplicationController
   before_action :comment_set, only: [:edit, :show]
 
+  def new
+    @training = Training.new
+  end
+
   def create
-    Training.create(training_params)
-    redirect_to '/'
+    @training = Training.create(training_params)
+    if @training.save
+      redirect_to '/'
+    else
+      render :new
+    end
   end
 
   def update
     @training = Training.find(params[:id])
-    @training.update(update_training_params)
+    if @training.update(update_training_params)
+      redirect_to "/"
+    else
+      render :new
+    end
+    
   end
 
   def destroy
@@ -22,7 +35,7 @@ class TrainingsController < ApplicationController
   private
 
   def training_params
-    params.permit(:date, :training_menu, :purpose, :introspection).merge(user_id: current_user.id)
+    params.require(:training).permit(:date, :training_menu, :purpose, :introspection).merge(user_id: current_user.id)
   end
 
   def update_training_params

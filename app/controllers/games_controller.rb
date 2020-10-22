@@ -1,14 +1,26 @@
 class GamesController < ApplicationController
   before_action :game_comment_set, only: [:edit, :show]
 
+  def new
+    @game = Game.new
+  end
+
   def create
-    Game.create(game_params)
-    redirect_to '/'
+    @game = Game.create(game_params)
+    if @game.save
+      redirect_to '/'
+    else
+      render :new
+    end
   end
 
   def update
     @game = Game.find(params[:id])
-    @game.update(update_game_params)
+    if  @game.update(update_game_params)
+      redirect_to "/"
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -22,7 +34,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.permit(:date, :opponent, :result, :good_point, :game_introspection).merge(user_id: current_user.id)
+    params.require(:game).permit(:date, :opponent, :result, :good_point, :game_introspection).merge(user_id: current_user.id)
   end
 
   def update_game_params
